@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RepTrack - Progressive Overload Workout Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>RepTrack</h1>
+      <p>Progressive Overload Workout Planner</p>
+    </header>
+
+    <main class="content">
+      <section class="card workout-form">
+        <h2>Workout Form</h2>
+        <form>
+          <label for="exercise">Exercise</label>
+          <select id="exercise">
+            <option>Bench Press</option>
+            <option>Deadlift</option>
+            <option>Squat</option>
+          </select>
+
+          <label for="weight">Weight (lbs)</label>
+          <input type="number" id="weight" placeholder="150" />
+
+          <label for="reps">Reps</label>
+          <input type="number" id="reps" placeholder="8" />
+
+          <label for="sets">Sets</label>
+          <input type="number" id="sets" placeholder="3" />
+
+          <button type="submit">Add Workout</button>
+        </form>
+      </section>
+
+      <section class="card history">
+        <h2>History</h2>
+        <p><strong>April 22, 2024</strong></p>
+        <p>Bench Press</p>
+        <p>150 lbs × 8 reps × 3 sets</p>
+      </section>
+
+      <section class="card chart">
+        <h2>Chart</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Line_chart.svg" alt="Progress Chart">
+      </section>
+    </main>
+  </div>
+</body>
+</html>
