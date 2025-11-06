@@ -1,4 +1,4 @@
-/* Reset */
+/* Global Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,6 @@
   font-family: "Inter", sans-serif;
 }
 
-/* Purple gradient background for all screens */
 body {
   background: linear-gradient(180deg, #b48cf2 0%, #8a63f5 100%);
   color: #222;
@@ -17,7 +16,6 @@ body {
   padding: 2rem;
 }
 
-/* Container */
 .container {
   width: 100%;
   max-width: 900px;
@@ -27,7 +25,7 @@ body {
 header {
   text-align: center;
   color: #fff;
-  margin-bottom: 2rem;
+  margin: 1rem 0 4rem;
 }
 
 header h1 {
@@ -40,14 +38,119 @@ header p {
   color: #eee;
 }
 
+/* Navbar */
+.navbar {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  z-index: 100;
+}
+
+.menu {
+  list-style: none;
+  display: inline-flex;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.menu a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #ffd6ff;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  list-style: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  min-width: 180px;
+  animation: fadeIn 0.3s ease forwards;
+  z-index: 10;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #6a3ff0;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background: #f4f1ff;
+  color: #4b22c3;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar (Mobile) */
+@media (max-width: 768px) {
+  .navbar {
+    position: static;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.9);
+    margin-top: 0.5rem;
+  }
+
+  .dropdown-menu li a {
+    color: #6a3ff0;
+  }
+}
+
 /* Layout */
 .content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 1.5rem;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  width: 100%;
 }
 
-/* Card styles */
 .card {
   background: #fff;
   border-radius: 20px;
@@ -61,7 +164,7 @@ header p {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Form */
+/* Form & Inputs */
 form {
   display: flex;
   flex-direction: column;
@@ -72,43 +175,100 @@ label {
   margin-top: 0.8rem;
 }
 
-input, select {
+input,
+select,
+#exerciseSearch {
+  width: 100%;
   margin-top: 0.3rem;
-  padding: 0.6rem;
+  padding: 0.6rem 0.7rem;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 1rem;
 }
 
-button {
-  margin-top: 1.2rem;
-  padding: 0.8rem;
+.inline-fields {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.inline-fields .field {
+  flex: 1;
+}
+
+/* Buttons (Unified Style) */
+button,
+.generate-btn,
+#clearHistoryBtn {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
   border: none;
-  background-color: #7b4cff;
-  color: white;
-  font-size: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #7b4cff, #a37bff);
+  color: #fff;
   font-weight: 600;
-  border-radius: 10px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  text-align: center;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(123, 76, 255, 0.3);
 }
 
-button:hover {
-  background-color: #6a3ff0;
+button:hover,
+.generate-btn:hover,
+#clearHistoryBtn:hover {
+  background: linear-gradient(90deg, #6a3ff0, #8f6aff);
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(123, 76, 255, 0.4);
 }
 
-/* History & Chart */
-.history p {
+/* Workout History */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.history-item {
+  background: #f6f4ff;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.history-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.history-item .date {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.history-item .exercise {
+  font-weight: 600;
+  font-size: 1.1rem;
   margin-top: 0.3rem;
 }
 
+.history-item .details {
+  font-size: 0.95rem;
+  color: #333;
+  margin-top: 0.2rem;
+}
+
+/* Chart & History */
 .chart img {
   width: 100%;
   height: auto;
   margin-top: 0.5rem;
 }
 
-/* Responsive Layout (mobile) */
+/* 📱 Mobile Layout */
 @media (max-width: 768px) {
   .content {
     grid-template-columns: 1fr;
@@ -119,8 +279,82 @@ button:hover {
   .card {
     padding: 1.5rem;
   }
+}
 
-  button {
-    background-color: #7442ff;
+/* Streak Display */
+.streak {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.streak-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #6a3ff0;
+}
+
+.flame {
+  width: 28px;
+  height: 28px;
+  border-radius: 50% 50% 50% 0;
+  background: radial-gradient(circle at 30% 30%, #ffb347, #ff7043);
+  transform: rotate(-45deg);
+  animation: flicker 0.6s infinite alternate ease-in-out;
+  box-shadow: 0 0 10px 3px rgba(255, 136, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+@keyframes flicker {
+  0% {
+    transform: rotate(-45deg) scale(1);
+    box-shadow: 0 0 8px 3px rgba(255, 136, 0, 0.7);
   }
+  100% {
+    transform: rotate(-46deg) scale(1.2);
+    box-shadow: 0 0 20px 6px rgba(255, 200, 0, 1);
+  }
+}
+
+@media (max-width: 768px) {
+  .streak-display {
+    gap: 0.4rem;
+  }
+}
+
+/* Exercise Search Dropdown */
+#exerciseResults {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+#exerciseResults li {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#exerciseResults li:hover {
+  background: #f3ebff;
+  color: #6a3ff0;
 }

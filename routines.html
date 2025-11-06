@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RepTrack | Exercise Routines</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="routine.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Navbar (reuse same from your main page) -->
+    <nav class="navbar">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Routines ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#upper">Upper Body</a></li>
+            <li><a href="#lower">Lower Body</a></li>
+            <li><a href="#cardio">Cardio</a></li>
+            <li><a href="#abs">Abs</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>Exercise Routines</h1>
+      <p>Choose a routine and follow the recommended workouts</p>
+    </header>
+
+
+    <main class="routine-page">
+  <div class="routine-grid">
+
+    <!-- Upper Body -->
+    <section class="card routine" id="upper">
+      <h2>Upper Body</h2>
+      <ul class="routine-list"></ul>
+      <button class="generate-btn" data-section="upper">Generate Workout</button>
+    </section>
+
+    <!-- Lower Body -->
+    <section class="card routine" id="lower">
+      <h2>Lower Body</h2>
+      <ul class="routine-list"></ul>
+      <button class="generate-btn" data-section="lower">Generate Workout</button>
+    </section>
+
+    <!-- Cardio -->
+    <section class="card routine" id="cardio">
+      <h2>Cardio</h2>
+      <ul class="routine-list"></ul>
+      <button class="generate-btn" data-section="cardio">Generate Workout</button>
+    </section>
+
+    <!-- Abs -->
+    <section class="card routine" id="abs">
+      <h2>Abs</h2>
+      <ul class="routine-list"></ul>
+      <button class="generate-btn" data-section="abs">Generate Workout</button>
+    </section>
+
+  </div>
+</main>
+</div>
+
+<script src="config.js"></script>
+<script src="api.js"></script>
+
+</body>
+</html>

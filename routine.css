@@ -1,0 +1,164 @@
+/* ROUTINE PAGE STYLING */
+
+/* Layout Container */
+.container {
+  max-width: 1600px !important;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  text-align: center;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+header p {
+  font-size: 1rem;
+  color: #eee;
+}
+
+/* Routine Page Wrapper */
+.routine-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Routine Grid Layout */
+.routine-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  justify-items: stretch;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* Routine Card */
+.routine {
+  background: #fff;
+  text-align: left;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 480px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.routine:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Titles */
+.routine h2 {
+  color: #6a3ff0;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Exercise List */
+.routine-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.routine-list li {
+  background: #fff;
+  border: 1px solid #eee;
+  margin-bottom: 0.8rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #333;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.routine-list li:hover {
+  background: #f4f0ff;
+  transform: scale(1.02);
+}
+
+/* Exercise Text Styling */
+.routine-list li strong {
+  color: #4b22c3;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.routine-list li strong:hover {
+  color: #7b4cff;
+}
+
+.routine-list li span {
+  color: #555;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 0.2rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+/* Generate Workout Button */
+.generate-btn {
+  margin-top: auto;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #7b4cff, #a37bff);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(123, 76, 255, 0.3);
+}
+
+.generate-btn:hover {
+  background: linear-gradient(90deg, #6a3ff0, #8f6aff);
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(123, 76, 255, 0.4);
+}
+
+/* Responsive Layouts */
+@media (max-width: 1200px) {
+  .routine-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .routine-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    margin-top: 3rem;
+  }
+
+  .routine {
+    max-width: 100%;
+  }
+}
