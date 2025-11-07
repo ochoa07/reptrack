@@ -289,27 +289,13 @@ button:hover,
 }
 
 /*  Mobile Layout */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .content {
-    display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    justify-content: center;
     text-align: center;
-    width: 100%;
   }
 
-  .card {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .container {
-    padding: 0 1rem;
-  }
-
-  header {
-    margin-bottom: 1.5rem;
-  }
 }
 
 
