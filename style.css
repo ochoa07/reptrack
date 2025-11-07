@@ -17,8 +17,10 @@ body {
 }
 
 .container {
-  width: 100%;
+   width: 100%;
   max-width: 900px;
+  padding: 0 1rem; /* adds breathing room on small screens */
+  margin: 0 auto;
 }
 
 /* Header */
@@ -125,7 +127,7 @@ header p {
     text-align: center;
   }
 
-  /* ✅ Keep menu horizontal even on mobile */
+  /* Keep menu horizontal even on mobile */
   .menu {
     flex-direction: row;
     justify-content: center;
@@ -154,7 +156,7 @@ header p {
     color: #6a3ff0;
   }
 
-  /* ✅ Dropdown still works on hover */
+  /* Dropdown still works on hover */
   .dropdown:hover .dropdown-menu {
     display: block;
   }
@@ -286,24 +288,45 @@ button:hover,
   margin-top: 0.5rem;
 }
 
-/* 📱 Mobile Layout */
+/*  Mobile Layout */
 @media (max-width: 768px) {
+  body {
+    align-items: center;
+    padding: 1rem;
+  }
+
   .content {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
     text-align: center;
-    gap: 1rem;
   }
 
   .card {
     width: 100%;
+    max-width: 500px; /* keeps card readable */
+    margin: 0 auto;
     padding: 1.2rem;
   }
 
-  .workout-form,
-  .history,
-  .chart,
-  .streak {
-    width: 100%;
+  header {
+    margin-bottom: 2rem;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    position: static;
+    margin-bottom: 1rem;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row; /* horizontal buttons */
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
   }
 }
 
