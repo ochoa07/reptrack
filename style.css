@@ -290,13 +290,29 @@ button:hover,
 
 /*  Mobile Layout */
 @media (max-width: 700px) {
+   body {
+    display: block; /* stop forcing desktop centering */
+    padding: 1rem; /* smaller padding on mobile */
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
   .content {
     grid-template-columns: 1fr;
-    max-width: 100%;
+    justify-items: center;
+    gap: 1.5rem;
     width: 100%;
-    text-align: center;
-    justify-content: center;
+  }
 
+  .card {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   header {
@@ -349,7 +365,7 @@ button:hover,
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .streak-display {
     gap: 0.4rem;
   }
