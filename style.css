@@ -368,15 +368,36 @@ button:hover,
 
 
 @media (max-width: 700px) {
+  body {
+    display: block;
+    padding: 1rem;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 1rem;
+    text-align: center;
+    justify-content: center;
+  }
+
   .content {
     grid-template-columns: 1fr;
+    width: 100%;
+    gap: 1.5rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 
   header {
     margin-top: 2rem;
-  }
-
-  .container {
-    max-width: 100%;
   }
 }
