@@ -293,8 +293,9 @@ button:hover,
   
   .content {
     grid-template-columns: 1fr;
-    justify-items: center;
+    align-items: center;
     justify-content: center;
+    width: 500px;
   }
 
 
