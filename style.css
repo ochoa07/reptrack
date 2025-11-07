@@ -291,7 +291,7 @@ button:hover,
 /*  Mobile Layout */
 @media (max-width: 700px) {
    body {
-    display: block; /* stop forcing desktop centering */
+    justify-content: center;
     padding: 1rem; /* smaller padding on mobile */
   }
 
