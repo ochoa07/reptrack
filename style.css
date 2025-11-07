@@ -295,7 +295,15 @@ button:hover,
   }
 
   .card {
-    padding: 1.5rem;
+    width: 100%;
+    padding: 1.2rem;
+  }
+
+  .workout-form,
+  .history,
+  .chart,
+  .streak {
+    width: 100%;
   }
 }
 
