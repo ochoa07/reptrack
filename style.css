@@ -295,7 +295,12 @@ button:hover,
     grid-template-columns: 1fr;
     align-items: center;
     justify-content: center;
-    width: 500px;
+    width: 100%;
+  }
+
+  .card workout-form {
+    justify-content: center;
+    align-items: center;
   }
 
 
