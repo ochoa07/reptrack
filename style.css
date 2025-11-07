@@ -290,45 +290,28 @@ button:hover,
 
 /*  Mobile Layout */
 @media (max-width: 768px) {
-  body {
-    align-items: center;
-    padding: 1rem;
-  }
-
   .content {
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    width: 100%;
+    gap: 1rem;
     text-align: center;
+    width: 100%;
   }
 
   .card {
-    width: 100%;
-    max-width: 500px; /* keeps card readable */
+    max-width: 100%;
     margin: 0 auto;
-    padding: 1.2rem;
+  }
+
+  .container {
+    padding: 0 1rem;
   }
 
   header {
-    margin-bottom: 2rem;
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: center;
-    position: static;
-    margin-bottom: 1rem;
-  }
-
-  .menu {
-    display: flex;
-    flex-direction: row; /* horizontal buttons */
-    gap: 1rem;
-    background: rgba(255, 255, 255, 0.25);
-    padding: 0.6rem 1rem;
-    border-radius: 12px;
+    margin-bottom: 1.5rem;
   }
 }
+
 
 /* Streak Display */
 .streak {
