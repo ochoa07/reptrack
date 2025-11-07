@@ -288,25 +288,6 @@ button:hover,
   margin-top: 0.5rem;
 }
 
-/*  Mobile Layout */
-@media (max-width: 700px) {
-  
-  .content {
-    grid-template-columns: 1fr;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .card workout-form {
-    justify-content: center;
-    align-items: center;
-  }
-
-
-
-}
-
 
 /* Streak Display */
 .streak {
