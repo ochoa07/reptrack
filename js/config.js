@@ -1,0 +1,3 @@
+// js/config.js
+export const API_KEY = "c851858300mshff097452e337797p1a4739jsnae4c441b702d";
+export const API_HOST = "exercisedb.p.rapidapi.com";
