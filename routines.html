@@ -73,17 +73,36 @@
 <script type="module" src="js/routines.js"></script>
 
 <script type="module">
-  import "./api.js";
+  import { initDropdown } from "./js/dropdown.js";
+
+  // Enable dropdown
+  initDropdown();
 
   // Read URL parameters
   const params = new URLSearchParams(window.location.search);
-  const section = params.get("section");
+  const section = params.get("section") || params.get("routine");
 
   if (section) {
     const target = document.getElementById(section);
     if (target) {
       setTimeout(() => {
+        // Smooth scroll
         target.scrollIntoView({ behavior: "smooth", block: "center" });
+
+        // Jump animation
+        target.classList.add("section-jump");
+
+        // Remove class after animation
+        setTimeout(() => {
+          target.classList.remove("section-jump");
+        }, 400);
+
+        // Auto-generate workout (since routines.js listens for click)
+        const button = target.querySelector(".generate-btn");
+        if (button) {
+          button.click();
+        }
+
       }, 300);
     }
   }

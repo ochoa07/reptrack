@@ -91,6 +91,11 @@
   <script type="module" src="js/main.js"></script>
 
   <script type="module">
+  import { initDropdown } from "./js/dropdown.js";
+
+  // Enable dropdown
+  initDropdown();
+
   // Read URL parameters
   const params = new URLSearchParams(window.location.search);
   const section = params.get("section");
@@ -99,7 +104,17 @@
     const target = document.getElementById(section);
     if (target) {
       setTimeout(() => {
+        // Smooth scroll
         target.scrollIntoView({ behavior: "smooth", block: "center" });
+
+        // Jump animation
+        target.classList.add("section-jump");
+
+        // Remove class so the animation can re-run later
+        setTimeout(() => {
+          target.classList.remove("section-jump");
+        }, 400);
+
       }, 300);
     }
   }
