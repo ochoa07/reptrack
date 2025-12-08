@@ -360,8 +360,10 @@ button:hover,
   }
 
   .container {
+    width: 100%;
     max-width: 100%;
-    padding: 0rem 1rem;
+    padding: 0;         /* FIX: remove padding on mobile */
+    margin: 0 auto;     /* insure centering */
     text-align: center;
   }
 
