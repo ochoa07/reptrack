@@ -7,7 +7,7 @@
 }
 
 body {
-  background: linear-gradient(180deg, #b48cf2 0%, #8a63f5 100%);
+  background: linear-gradient(180deg, #96c9f4 0%, #3b82f6 100%);
   color: #222;
   display: flex;
   justify-content: center;
@@ -17,9 +17,9 @@ body {
 }
 
 .container {
-   width: 100%;
+  width: 100%;
   max-width: 900px;
-  margin: 0 auto;
+  padding: 0rem 1rem;
 }
 
 /* Header */
@@ -55,7 +55,7 @@ header p {
   padding: 0.8rem 1.2rem;
   border-radius: 12px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 10px rgba(255, 122, 203, 0.25);
 }
 
 .menu a {
@@ -66,7 +66,7 @@ header p {
 }
 
 .menu a:hover {
-  color: #ffd6ff;
+  color: #ff7acb;
 }
 
 /* Dropdown */
@@ -92,14 +92,14 @@ header p {
 .dropdown-menu li a {
   display: block;
   padding: 0.6rem 1rem;
-  color: #6a3ff0;
+  color: #1e40af;
   font-weight: 500;
   transition: background 0.3s, color 0.3s;
 }
 
 .dropdown-menu li a:hover {
-  background: #f4f1ff;
-  color: #4b22c3;
+  background: rgba(255, 182, 115, 0.25); /* light orange tint */
+  color: #ff7acb;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -126,7 +126,6 @@ header p {
     text-align: center;
   }
 
-  /* Keep menu horizontal even on mobile */
   .menu {
     flex-direction: row;
     justify-content: center;
@@ -137,30 +136,7 @@ header p {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
-
-  .dropdown-menu {
-    position: absolute;
-    top: 2.5rem;
-    right: 0;
-    background: #fff;
-    border-radius: 8px;
-    padding: 0.5rem 0;
-    list-style: none;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    min-width: 180px;
-    display: none;
-  }
-
-  .dropdown-menu li a {
-    color: #6a3ff0;
-  }
-
-  /* Dropdown still works on hover */
- /* .dropdown:hover .dropdown-menu {
-    display: block;
-  }*/
-} 
-
+}
 
 /* Layout */
 .content {
@@ -215,7 +191,7 @@ select,
   flex: 1;
 }
 
-/* Buttons (Unified Style) */
+/* Buttons */
 button,
 .generate-btn,
 #clearHistoryBtn {
@@ -223,7 +199,7 @@ button,
   padding: 0.7rem 1.5rem;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(90deg, #7b4cff, #a37bff);
+  background: linear-gradient(90deg, #ffb673, #ff7acb);
   color: #fff;
   font-weight: 600;
   font-size: 1rem;
@@ -231,15 +207,15 @@ button,
   transition: all 0.3s ease;
   text-align: center;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 10px rgba(123, 76, 255, 0.3);
+  box-shadow: 0 4px 10px rgba(255, 150, 150, 0.35);
 }
 
 button:hover,
 .generate-btn:hover,
 #clearHistoryBtn:hover {
-  background: linear-gradient(90deg, #6a3ff0, #8f6aff);
+  background: linear-gradient(90deg, #ff9c5c, #ff63c1);
   transform: scale(1.03);
-  box-shadow: 0 6px 14px rgba(123, 76, 255, 0.4);
+  box-shadow: 0 6px 16px rgba(255, 130, 130, 0.45);
 }
 
 /* Workout History */
@@ -248,10 +224,27 @@ button:hover,
   flex-direction: column;
   gap: 1rem;
   margin-top: 1rem;
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.history-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.history-list::-webkit-scrollbar-track {
+  background: #f0eaff;
+  border-radius: 10px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+  background: #b79aff;
+  border-radius: 10px;
 }
 
 .history-item {
-  background: #f6f4ff;
+  background: #e8f3ff;
   border-radius: 10px;
   padding: 0.8rem 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -280,34 +273,36 @@ button:hover,
   margin-top: 0.2rem;
 }
 
-/* Chart & History */
+/* Chart */
 .chart img {
   width: 100%;
   height: auto;
   margin-top: 0.5rem;
 }
 
-
-/* Streak Display */
+/* Streak */
 .streak {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
+/* Keep title at top, add spacing */
+.streak h2,
+.streak-title {
+  margin-bottom: 4rem; /* space between title and flame */
+}
+
+/* Flame + number grouped */
 .streak-display {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #6a3ff0;
 }
 
+/* Flame */
 .flame {
   width: 28px;
   height: 28px;
@@ -322,21 +317,13 @@ button:hover,
 @keyframes flicker {
   0% {
     transform: rotate(-45deg) scale(1);
-    box-shadow: 0 0 8px 3px rgba(255, 136, 0, 0.7);
   }
   100% {
     transform: rotate(-46deg) scale(1.2);
-    box-shadow: 0 0 20px 6px rgba(255, 200, 0, 1);
   }
 }
 
-@media (max-width: 700px) {
-  .streak-display {
-    gap: 0.4rem;
-  }
-}
-
-/* Exercise Search Dropdown */
+/* Exercise Search Results */
 #exerciseResults {
   list-style: none;
   padding: 0;
@@ -358,15 +345,14 @@ button:hover,
 #exerciseResults li {
   padding: 0.6rem 1rem;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
 #exerciseResults li:hover {
-  background: #f3ebff;
-  color: #6a3ff0;
+  background: #e5f1ff;
+  color: #1e40af;
 }
 
-
+/* Mobile */
 @media (max-width: 700px) {
   body {
     display: block;
@@ -374,43 +360,87 @@ button:hover,
   }
 
   .container {
-    width: 100%;
     max-width: 100%;
-    margin: 0;
-    padding: 0 1rem;
+    padding: 0rem 1rem;
     text-align: center;
-    justify-content: center;
   }
 
   .content {
     grid-template-columns: 1fr;
-    width: 100%;
     gap: 1.5rem;
-    text-align: center;
-    justify-content: center;
   }
 
   .card {
     width: 100%;
-    max-width: 100%;
     text-align: center;
-    justify-content: center;
   }
 
-  header {
-    margin-top: 2rem;
+   .streak {
+    min-height: 240px; /* ensures enough space */
+    justify-content: flex-start; /* keeps title at top */
+    padding-top: 2rem;
+  }
+
+  .streak-display {
+    margin-top: -1rem; /* pushes flame below title */
   }
 }
 
-
-/* Jump (pop) animation when a section is selected */
+/* Jump Animation */
 .section-jump {
   animation: jump 0.35s ease;
 }
 
 @keyframes jump {
-  0%   { transform: scale(1); }
-  30%  { transform: scale(1.05); }
-  60%  { transform: scale(0.97); }
+  0% { transform: scale(1); }
+  30% { transform: scale(1.05); }
+  60% { transform: scale(0.97); }
   100% { transform: scale(1); }
 }
+
+/* Toast */
+.toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1.5rem;
+  background: linear-gradient(90deg, #ff8a3d, #ff4f8b);
+  color: #fff; /* white text */
+  padding: 0.8rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 14px rgba(255, 100, 60, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Global Pink-Orange Scrollbar Theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 183, 114, 0.25); /* light peach */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff7acb, #ffb573); /* pink → orange */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff5fb8, #ffa34d);
+}
+
+.history-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff7acb, #ffb573);
+}
+

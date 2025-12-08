@@ -21,15 +21,17 @@ export function updateChart() {
   chartInstance = new Chart(ctx, {
     type: "line",
     data: {
-      labels: sorted.map(w => w.date),
-      datasets: [{
-        label: "Weight Progress (lbs)",
-        data: sorted.map(w => w.weight),
-        borderColor: "#7b4cff",
-        backgroundColor: "rgba(123,76,255,0.2)",
-        fill: true,
-        borderWidth: 3
-      }]
+      labels: sorted.map((w) => w.date),
+      datasets: [
+        {
+          label: "Weight Progress (lbs)",
+          data: sorted.map((w) => w.weight),
+          borderColor: "#ff7acb",
+          backgroundColor: "rgba(255, 182, 115, 0.25)", 
+          fill: true,
+          borderWidth: 3
+        }
+      ]
     },
     options: { responsive: true }
   });

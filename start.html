@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RepTrack - Start</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/start.css" />
+</head>
+<body>
+  <div class="container start-container">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <ul class="menu">
+        <!-- Home now points to the start page -->
+        <li><a href="start.html">Home</a></li>
+        <li><a href="index.html?section=workout">Planner</a></li>
+        <li><a href="routines.html">Routines</a></li>
+        <li class="dropdown">
+          <a href="#">Quick Jump ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html?section=workout">Workout Form</a></li>
+            <li><a href="index.html?section=history">History</a></li>
+            <li><a href="index.html?section=chart">Progress Chart</a></li>
+            <li><a href="index.html?section=streak">Streak Tracker</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="start-main">
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <p class="badge">New • Progressive Overload Planner</p>
+          <h1>RepTrack helps you lift smarter, not just heavier.</h1>
+          <p class="hero-subtitle">
+            Log your workouts, track your progress over time, and stay consistent with streaks and smart routines powered by live exercise data.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="index.html?section=workout">
+              Start Logging Workouts
+            </a>
+            <a class="btn ghost" href="routines.html">
+              Explore Routines
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <span>📈 Progress chart included</span>
+            <span>🔥 Streak tracker to keep you consistent</span>
+            <span>💪 1,300+ exercises via API</span>
+          </div>
+        </div>
+
+        <!-- Decorative animated blob -->
+        <div class="hero-visual">
+          <div class="hero-blob"></div>
+          <div class="hero-card">
+            <p class="hero-card-title">Today’s Focus</p>
+            <p class="hero-card-body">Log your main lift, then watch your chart grow over time.</p>
+            <p class="hero-card-tag">You vs. You 💪</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features">
+        <h2>Why use RepTrack?</h2>
+        <p class="features-subtitle">
+          Everything you need to build strength and good habits, all in one simple web app.
+        </p>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">📝</div>
+            <h3>Smart Workout Logging</h3>
+            <p>
+              Detailed, validated workout form with search-powered exercise selection so you always log the right movement.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Progress & Streaks</h3>
+            <p>
+              View your history, track your weight progression over time, and keep your streak alive with the built-in tracker.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Auto-Generated Routines</h3>
+            <p>
+              Generate upper, lower, cardio, or core routines powered by a live exercise API for endless variety.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Call To Action -->
+      <section class="cta">
+        <div class="cta-inner">
+          <h2>Ready to start your next training block?</h2>
+          <p>Open the planner, log today’s session, and let RepTrack handle the tracking.</p>
+          <a class="btn primary" href="index.html?section=workout">
+            Open Workout Planner
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script type="module">
+    import { initDropdown } from "./js/dropdown.js";
+    initDropdown();
+  </script>
+</body>
+</html>

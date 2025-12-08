@@ -1,5 +1,3 @@
-/* ROUTINE PAGE STYLING */
-
 /* Layout Container */
 .container {
   max-width: 1600px !important;
@@ -29,7 +27,7 @@ header p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 0rem 1rem;
 }
 
 /* Routine Grid Layout */
@@ -65,7 +63,7 @@ header p {
 
 /* Section Titles */
 .routine h2 {
-  color: #6a3ff0;
+  color: #1e40af;
   margin-bottom: 1rem;
   text-align: center;
   font-size: 1.4rem;
@@ -93,19 +91,20 @@ header p {
 }
 
 .routine-list li:hover {
-  background: #f4f0ff;
+  background: #e5f1ff;
   transform: scale(1.02);
 }
 
 /* Exercise Text Styling */
 .routine-list li strong {
-  color: #4b22c3;
-  font-weight: 600;
+  color: #333;
+  font-weight: 350;
   transition: color 0.2s ease;
+  font-weight: bold;
 }
 
 .routine-list li strong:hover {
-  color: #7b4cff;
+  color: #3b82f6;
 }
 
 .routine-list li span {
@@ -117,13 +116,15 @@ header p {
   letter-spacing: 0.3px;
 }
 
-/* Generate Workout Button */
+/* --------------------------------------
+   Generate Workout Button (UPDATED)
+--------------------------------------- */
 .generate-btn {
   margin-top: auto;
   padding: 0.7rem 1.5rem;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(90deg, #7b4cff, #a37bff);
+  background: linear-gradient(90deg, #ffb673, #ff7acb);
   color: #fff;
   font-weight: 600;
   font-size: 1rem;
@@ -133,13 +134,13 @@ header p {
   width: 100%;
   text-align: center;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 10px rgba(123, 76, 255, 0.3);
+  box-shadow: 0 4px 10px rgba(255, 150, 150, 0.35);
 }
 
 .generate-btn:hover {
-  background: linear-gradient(90deg, #6a3ff0, #8f6aff);
+  background: linear-gradient(90deg, #ff9c5c, #ff63c1);
   transform: scale(1.03);
-  box-shadow: 0 6px 14px rgba(123, 76, 255, 0.4);
+  box-shadow: 0 6px 16px rgba(255, 130, 130, 0.45);
 }
 
 /* Responsive Layouts */
