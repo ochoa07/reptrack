@@ -9,9 +9,6 @@
 body {
   background: linear-gradient(180deg, #96c9f4 0%, #3b82f6 100%);
   color: #222;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   min-height: 100vh;
   padding: 2rem;
 }
@@ -19,7 +16,8 @@ body {
 .container {
   width: 100%;
   max-width: 900px;
-  padding: 0rem 1rem;
+  margin: 0 auto;     /* ← this is the correct way to center */
+  padding: 0 1rem;
 }
 
 /* Header */
@@ -130,9 +128,10 @@ header p {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1.2rem;
+    max-width: 100%;
+    gap: 0.6rem;
     background: rgba(255, 255, 255, 0.2);
-    padding: 0.6rem 1rem;
+    padding: 0.4rem 0.6rem;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
@@ -141,7 +140,7 @@ header p {
 /* Layout */
 .content {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   width: 100%;
 }
@@ -360,10 +359,8 @@ button:hover,
   }
 
   .container {
-     max-width: 100%;
-    width: 100%;
-    padding: 0;                  /* make sure no extra horizontal spacing */
-    margin: 0 auto;
+    max-width: 100%;
+    padding: 0;
   }
 
   .content {
@@ -373,7 +370,6 @@ button:hover,
 
   .card {
     width: 100%;
-    text-align: center;
   }
 
    .streak {
@@ -385,6 +381,9 @@ button:hover,
   .streak-display {
     margin-top: -1rem; /* pushes flame below title */
   }
+
+
+
 }
 
 /* Jump Animation */
