@@ -15,7 +15,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;     /* ← this is the correct way to center */
   padding: 0 1rem;
 }
@@ -125,16 +125,26 @@ header p {
   }
 
   .menu {
+    z-index: 9999; 
+    position: relative;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    gap: 0.6rem;
+    gap: 1rem;               /* more space between menu items */
     background: rgba(255, 255, 255, 0.2);
-    padding: 0.4rem 0.6rem;
+    padding: 0.8rem 1rem;     /* more comfortable padding */
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
+
+.hero-visual,
+.hero-blob,
+.hero-card {
+  z-index: 0 !important;
+  position: relative;
+}
+
 }
 
 /* Layout */
@@ -143,6 +153,8 @@ header p {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   width: 100%;
+   max-width: 900px;   /* LIMIT GRID WIDTH */
+  margin: 0 auto;      /* CENTER IT */
 }
 
 .card {
@@ -355,21 +367,24 @@ button:hover,
 @media (max-width: 700px) {
   body {
     padding: 1.5rem;
-    display: block;
+    display: flex;
   }
 
   .container {
     max-width: 100%;
     padding: 0;
+    text-align: center;
   }
 
   .content {
+    display: block;
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
   .card {
     width: 100%;
+    margin-bottom: 1.5rem; /* space between cards */
   }
 
    .streak {
