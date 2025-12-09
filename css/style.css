@@ -362,7 +362,7 @@ button:hover,
   .container {
      max-width: 100%;
     width: 100%;
-    padding: 0;                  /* make sure no extra horizontal spacing */
+    padding: 1.5rem;                  /* make sure no extra horizontal spacing */
     margin: 0 auto;
   }
 
