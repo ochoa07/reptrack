@@ -2,7 +2,6 @@
 
 RepTrack is a responsive web application designed to help users track workouts, visualize progress, and stay consistent through streak tracking. The app focuses on **progressive overload**, encouraging users to log workouts and improve over time in a simple, motivating way.
 
----
 
 ## What Is RepTrack?
 
@@ -15,7 +14,6 @@ RepTrack allows users to:
 
 The app is designed to be **clean, beginner-friendly, and mobile-responsive**, with smooth animations and good user experience.
 
----
 
 ## Main Features
 
@@ -55,7 +53,6 @@ The app is designed to be **clean, beginner-friendly, and mobile-responsive**, w
 - Toast notifications for user feedback
 - Gradient buttons and modern card design
 
----
 
 ## Technologies Used
 
@@ -66,7 +63,6 @@ The app is designed to be **clean, beginner-friendly, and mobile-responsive**, w
 - **Local Storage API** – Data persistence
 - **ExerciseDB API / JSON data** – Exercise suggestions
 
----
 
 ## Application Structure
 
@@ -91,7 +87,7 @@ reptrack/
 │
 └── README.md             # Project documentation
 
----
+```
 
 ## URL Parameters
 
@@ -100,6 +96,7 @@ RepTrack uses URL parameters to navigate between sections of the app.
 **Example:**
 ```txt
 planner.html?section=history
+```
 
 This:
 
@@ -107,7 +104,6 @@ This:
 - Applies a visual highlight (jump) animation  
 - Improves navigation and overall user experience  
 
----
 
 ## UX & Accessibility
 
