@@ -3,121 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RepTrack - Start</title>
+  <meta name="theme-color" content="#090b0d" />
+  <title>RepTrack | Training Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/start.css" />
 </head>
 <body>
-  <div class="container start-container">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><span class="brand-mark"><i></i><i></i><i></i></span><span>Rep<span>Track</span></span></a>
+      <nav class="navbar" aria-label="Main navigation">
+        <ul class="menu">
+          <li><a class="active" href="index.html"><span>⌂</span> Home</a></li>
+          <li><a href="planner.html?section=workout"><span>▣</span> Planner</a></li>
+          <li><a href="routines.html"><span>⌁</span> Routines</a></li>
+        </ul>
+      </nav>
+      <p class="sidebar-quote">Discipline tracks progress.</p>
+    </aside>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-      <ul class="menu">
-        <!-- Home now points to the start page -->
-        <li><a href="index.html">Home</a></li>
-        <li><a href="planner.html?section=workout">Planner</a></li>
-        <li><a href="routines.html">Routines</a></li>
-        <li class="dropdown">
-          <a href="#">Quick Jump ▾</a>
-          <ul class="dropdown-menu">
-            <li><a href="planner.html?section=workout">Workout Form</a></li>
-            <li><a href="planner.html?section=history">History</a></li>
-            <li><a href="planner.html?section=chart">Progress Chart</a></li>
-            <li><a href="planner.html?section=streak">Streak Tracker</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-
-    <main class="start-main">
-
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="hero-content">
-          <p class="badge">New • Progressive Overload Planner</p>
-          <h1>RepTrack helps you lift smarter, not just heavier.</h1>
-          <p class="hero-subtitle">
-            Log your workouts, track your progress over time, and stay consistent with streaks and smart routines powered by live exercise data.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn primary" href="planner.html?section=workout">
-              Start Logging Workouts
-            </a>
-            <a class="btn ghost" href="routines.html">
-              Explore Routines
-            </a>
-          </div>
-
-          <div class="hero-meta">
-            <span>📈 Progress chart included</span>
-            <span>🔥 Streak tracker to keep you consistent</span>
-            <span>💪 1,300+ exercises via API</span>
-          </div>
+    <main class="dashboard">
+      <header class="dashboard-header">
+        <div><p class="eyebrow">Good morning,</p><h1>Chelsea</h1><p class="header-subtitle">Ready to get stronger?</p></div>
+        <div class="header-actions">
+          <label class="global-search"><span>⌕</span><input type="search" placeholder="Search exercises, routines…" aria-label="Search" /></label>
+          <span class="profile-avatar">C</span>
         </div>
+      </header>
 
-        <!-- Decorative animated blob -->
-        <div class="hero-visual">
-          <div class="hero-blob"></div>
-          <div class="hero-card">
-            <p class="hero-card-title">Today’s Focus</p>
-            <p class="hero-card-body">Log your main lift, then watch your chart grow over time.</p>
-            <p class="hero-card-tag">You vs. You 💪</p>
+      <section class="dashboard-grid">
+        <article class="panel training-card">
+          <div class="training-copy">
+            <p class="eyebrow">Today's training</p><h2>Upper Body Strength</h2>
+            <p>Push harder. A stronger you is a happier you.</p>
+            <div class="training-meta"><span>◫ 5 exercises</span><span>◷ ~45 min</span><span>▥ Intermediate</span></div>
+            <div class="training-actions">
+              <a class="button button-primary" href="planner.html?section=workout">▶ Start Workout</a>
+              <a class="button button-secondary" href="planner.html?section=workout">✎ Quick Log</a>
+            </div>
           </div>
-        </div>
+          <div class="weight-art" aria-hidden="true"><span></span><span></span><span></span></div>
+        </article>
+
+        <article class="panel activity-card">
+          <div class="panel-heading"><h2>Weekly Activity</h2><span>This week</span></div>
+          <div class="activity-chart" aria-label="Workouts logged this week">
+            <div class="bar-item"><span class="bar" data-day="1"></span><small>Mon</small></div><div class="bar-item"><span class="bar" data-day="2"></span><small>Tue</small></div><div class="bar-item"><span class="bar" data-day="3"></span><small>Wed</small></div><div class="bar-item"><span class="bar" data-day="4"></span><small>Thu</small></div><div class="bar-item"><span class="bar" data-day="5"></span><small>Fri</small></div><div class="bar-item"><span class="bar" data-day="6"></span><small>Sat</small></div><div class="bar-item"><span class="bar" data-day="0"></span><small>Sun</small></div>
+          </div>
+          <div class="activity-stats"><div><strong id="weeklySets">0</strong><span>Total sets</span></div><div><strong id="weeklySessions">0</strong><span>Sessions</span></div><div><strong class="accent" id="weeklyChange">Start</strong><span>This week</span></div></div>
+        </article>
+
+        <article class="panel streak-card"><div class="streak-icon">◆</div><div><p><strong id="homeStreak">0</strong> day streak</p><span>Keep the momentum going!</span></div><div class="week-dots" id="weekDots"></div></article>
+
+        <article class="panel record-card">
+          <div class="panel-heading"><h2>Recent Personal Record</h2><span id="recordDate">Add your first lift</span></div>
+          <div class="record-content"><div><span id="recordExercise">No workout yet</span><strong><span id="recordWeight">—</span><small id="recordUnit"></small></strong></div><p>“Progress looks good on you.”</p></div>
+        </article>
+
+        <article class="panel next-card">
+          <div class="panel-heading"><h2>Next Workout</h2><span>Tomorrow</span></div><h3>Lower Body Power</h3>
+          <div class="training-meta"><span>◫ 5 exercises</span><span>◷ ~40 min</span></div>
+          <a class="button button-secondary full-width" href="routines.html?section=lower">View Workout →</a>
+        </article>
       </section>
 
-      <!-- Features Section -->
-      <section class="features">
-        <h2>Why use RepTrack?</h2>
-        <p class="features-subtitle">
-          Everything you need to build strength and good habits, all in one simple web app.
-        </p>
-
-        <div class="features-grid">
-          <article class="feature-card">
-            <div class="feature-icon">📝</div>
-            <h3>Smart Workout Logging</h3>
-            <p>
-              Detailed, validated workout form with search-powered exercise selection so you always log the right movement.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon">📊</div>
-            <h3>Progress & Streaks</h3>
-            <p>
-              View your history, track your weight progression over time, and keep your streak alive with the built-in tracker.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Auto-Generated Routines</h3>
-            <p>
-              Generate upper, lower, cardio, or core routines powered by a live exercise API for endless variety.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- Call To Action -->
-      <section class="cta">
-        <div class="cta-inner">
-          <h2>Ready to start your next training block?</h2>
-          <p>Open the planner, log today’s session, and let RepTrack handle the tracking.</p>
-          <a class="btn primary" href="planner.html?section=workout">
-            Open Workout Planner
-          </a>
-        </div>
-      </section>
-
+      <footer class="dashboard-footer"><span>▥</span><p>A stronger tomorrow starts with what you do today.</p></footer>
     </main>
   </div>
-
-  <script type="module">
-    import { initDropdown } from "./js/dropdown.js";
-    initDropdown();
-  </script>
+  <script type="module" src="js/home.js"></script>
 </body>
 </html>
